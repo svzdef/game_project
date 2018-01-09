@@ -9,11 +9,12 @@ class kalusfighter(object):
 	def attack(Person, afterattack):
 		afterattack.HP -= Person.ATK
 
-		while afterattack.HP < 0:
-			print ('{} dead').format(afterattack.name)
+		if afterattack.HP <= 0:
+			message = '{} dead'.format(afterattack.name)
 		
-		or message = '{} has {} point remaining'.format(afterattack.name, afterattack.HP)
-			print (message)
+		elif afterattack.HP > 0:
+			message = '{} has {} point remaining'.format(afterattack.name, afterattack.HP)
+		print (message)
 
 alex = kalusfighter(ATK=20, HP=100, MP=50, name='alex', job='saber')
 bob = kalusfighter(ATK=30, HP=200, MP=200, name='bob', job='archer')
